@@ -12,12 +12,12 @@
     <div class="container">
         <div class="counter">0</div>
         <div class="menu">
-            <button id="decrease-1">-1</button>
-            <button id="increment-1">+1</button>
-            <button id="decrease-10">-10</button>
-            <button id="increment-10">+10</button>
-            <button id="decrease-100">-100</button>
-            <button id="increment-100">+100</button>
+            <button class="decrease" value="1">-1</button>
+            <button class="increment" value="1">+1</button>
+            <button class="decrease" value="10">-10</button>
+            <button class="increment" value="10">+10</button>
+            <button class="decrease" value="100">-100</button>
+            <button class="increment" value="100">+100</button>
             <button id="reset">Reset</button>
         </div>
     </div>
@@ -28,12 +28,24 @@
         const counter = document.querySelector(".counter");
         const reset = document.querySelector("#reset");
 
-        const decreaseBy1 = document.querySelector("#decrease-1");
-        const incrementBy1 = document.querySelector("#increment-1");
-        const decreaseBy10 = document.querySelector("#decrease-10");
-        const incrementBy10 = document.querySelector("#increment-10");
-        const decreaseBy100 = document.querySelector("#decrease-100");
-        const incrementBy100 = document.querySelector("#increment-100");
+        const decreaseButtons = document.querySelectorALl(".decrease");
+        const incrementButtons = document.querySelector(".increment");
+
+        // Counter decrease and increment functions
+        let count = 0;
+
+        function decreaseCount(num) {
+            count += num;
+            return count;
+        }
+
+        function incrementCount(num) {
+            count += num;
+            return count;
+        }
+
+        // Event listener for decrease buttons
+        
 
     </script>
 
