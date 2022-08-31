@@ -28,14 +28,14 @@
         const counter = document.querySelector(".counter");
         const reset = document.querySelector("#reset");
 
-        const decreaseButtons = document.querySelectorALl(".decrease");
-        const incrementButtons = document.querySelector(".increment");
+        const decreaseButtons = document.querySelectorAll(".decrease");
+        const incrementButtons = document.querySelectorAll(".increment");
 
         // Counter decrease and increment functions
         let count = 0;
 
         function decreaseCount(num) {
-            count += num;
+            count -= num;
             return count;
         }
 
@@ -45,6 +45,26 @@
         }
 
         // Event listener for decrease buttons
+        decreaseButtons.forEach(btn => {
+            // When a button get clicked, the counter decrease for the button's value
+            btn.addEventListener('click', (e) => {
+                let value = Number(e.target.value);
+                decreaseCount(value)
+                counter.textContent = `${count}`;
+            });
+        });
+
+        // Event listener for increment buttons
+        incrementButtons.forEach(btn => {
+            // When a button get clicked, the counter increment for the button's value
+            btn.addEventListener('click', (e) => {
+                let value = Number(e.target.value);
+                incrementCount(value)
+                counter.textContent = `${count}`;
+            });
+        });
+
+        // Event listener for Reset
         
 
     </script>
